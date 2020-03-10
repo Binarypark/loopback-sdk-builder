@@ -3,7 +3,7 @@
  * @module lb-sdk
  * @description
  * @license MTI
- * 
+ *
  * This CLI Tool loads client sdk generators for the selected library
  * currently the only support is for Angular2 but drivers can be
  * selected in order to work in different environments like nativescript
@@ -73,13 +73,14 @@ if (!argv['q']) {
   console.log(chalk.green('*                      Fabian Scheidt <https://github.com/fabianscheidt>                 *'));
   console.log(chalk.green('*                    Michał Frączkiewicz <https://github.com/bonaventoora>               *'));
   console.log(chalk.green('*                       Matthias Tylkowski <https://github.com/tylkomat>                 *'));
+  console.log(chalk.green('*                       collaorodrigo7 <https://github.com/collaorodrigo7>               *'));
   console.log(chalk.green('*                                                                                        *'));
   console.log(chalk.green('*                                 ORIGINALLY FORKED FROM                                 *'));
   console.log(chalk.green('*                      Miroslav Bajtos\' <miroslav@strongloop.com>                        *'));
   console.log(chalk.green('*                   https://github.com/strongloop/loopback-sdk-angular                   *'));
   console.log(chalk.green('*                                                                                        *'));
   console.log(chalk.green('=========================================================================================='));
-  
+
   console.log('\n\THE MAGIC IS ABOUT TO HAPPEN ...\n\n');
 }
 
@@ -120,20 +121,20 @@ function verifyPath() {
   } else {
 
     if (context.wipe === 'enabled') {
-    
+
       if (!context.quiet) {
         console.log(chalk.yellow('WARNING: The targeted SDK Directory is not empty but the "-w" flag is enabled. Removing contents.\n\n'));
       }
-      
+
       runGenerator();
-      
+
     } else {
       const readline = require('readline');
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout
       });
-  
+
       rl.question(chalk.yellow('WARNING: The targeted SDK Directory is not empty, do you want to erase its content? (Y/n) \n\n'), (answer) => {
         switch (answer) {
           case 'No':
@@ -170,7 +171,7 @@ function runGenerator() {
   if (!context.quiet) {
     console.info('\n\nEnjoy!!!');
   }
-  
+
   //} catch (err) {
   //  throw new Error(err);
   //}
